@@ -12,12 +12,13 @@
 		<button @click="minusCounter">Minus</button>
 	</div> -->
 
-	<div id="app">
-		<p>Input Value: {{ value }}</p>
-		<input type="text" @input="readValue">
+	<div id="app" style="height: 300px; border: solid black 1px;" @mouseMove="calcClient">
+		<p>clientX: {{ clientX }}</p>
+		<p>clientY: {{ clientY }}</p>
 	</div>
 
 	<script src="vue.js"></script>
+
 	<script>
 		// new Vue({
 		// 	el: "#app",
@@ -46,13 +47,14 @@
 			el: "#app",
 
 			data: {
-				value: ""
+				clientX: 0,
+				clientY: 0
 			},
 
 			methods: {
-				readValue: function(e) {
-					console.log(e);
-					this.value = e.target.value
+				calcClient: function(e) {
+					this.clientX = e.clientX;
+					this.clientY = e.clientY;
 				}
 			}
 		});
