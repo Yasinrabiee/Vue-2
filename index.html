@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue Js</title>
+</head>
+<body>
+	<!-- <div id="app">
+		<p>Count: {{ count }}</p>
+		<button @click="plusCounter">Plus</button>
+		<button @click="minusCounter">Minus</button>
+	</div> -->
+
+	<div id="app">
+		<p>Input Value: {{ value }}</p>
+		<input type="text" @input="readValue">
+	</div>
+
+	<script src="vue.js"></script>
+	<script>
+		// new Vue({
+		// 	el: "#app",
+		// 	data: {
+		// 		count: localStorage.getItem(`value`) === null ? 0 :
+		// 		localStorage.getItem(`value`) 
+		// 	},
+		// 	methods: {
+		// 		plusCounter: function() {
+		// 			this.count++;
+		// 			localStorage.setItem(`value`, this.count);
+		// 		},
+
+		// 		minusCounter: function() {
+		// 			this.count--;
+		// 			if (this.count < 0) {
+		// 				this.count = 0;
+		// 				return false;
+		// 			}
+		// 			localStorage.setItem(`value`, this.count);
+		// 		}
+		// 	}
+		// });
+
+		new Vue({
+			el: "#app",
+
+			data: {
+				value: ""
+			},
+
+			methods: {
+				readValue: function(e) {
+					console.log(e);
+					this.value = e.target.value
+				}
+			}
+		});
+	</script>
+</body>
+</html>
