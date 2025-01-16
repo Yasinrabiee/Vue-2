@@ -4,60 +4,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Vue Js</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/vue.js"></script>
+	<script src="js/script.js" defer></script>
 </head>
 <body>
-	<!-- <div id="app">
-		<p>Count: {{ count }}</p>
-		<button @click="plusCounter">Plus</button>
-		<button @click="minusCounter">Minus</button>
-	</div> -->
-
-	<div id="app" style="height: 300px; border: solid black 1px;" @mouseMove="calcClient">
-		<p>clientX: {{ clientX }}</p>
-		<p>clientY: {{ clientY }}</p>
+	<div id="app">
+		<div class="center">
+			<div class="form">
+				<div class="form-element">
+					<input type="password" class="password-field" />
+					<div class="toggle-password" @click="showPassword">
+						<i class="fa fa-eye"></i>
+						<i class="fa fa-eye-slash"></i>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<script src="vue.js"></script>
-
-	<script>
-		// new Vue({
-		// 	el: "#app",
-		// 	data: {
-		// 		count: localStorage.getItem(`value`) === null ? 0 :
-		// 		localStorage.getItem(`value`) 
-		// 	},
-		// 	methods: {
-		// 		plusCounter: function() {
-		// 			this.count++;
-		// 			localStorage.setItem(`value`, this.count);
-		// 		},
-
-		// 		minusCounter: function() {
-		// 			this.count--;
-		// 			if (this.count < 0) {
-		// 				this.count = 0;
-		// 				return false;
-		// 			}
-		// 			localStorage.setItem(`value`, this.count);
-		// 		}
-		// 	}
-		// });
-
-		new Vue({
-			el: "#app",
-
-			data: {
-				clientX: 0,
-				clientY: 0
-			},
-
-			methods: {
-				calcClient: function(e) {
-					this.clientX = e.clientX;
-					this.clientY = e.clientY;
-				}
-			}
-		});
-	</script>
 </body>
 </html>
